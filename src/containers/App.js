@@ -9,7 +9,8 @@ class App extends Component {
         super();
         this.state = {
             robots: [],
-            searchfield: ''
+            searchfield: '',
+            date: new Date()
         }
     }
 
@@ -33,6 +34,7 @@ class App extends Component {
         (
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
+                <h2>Its is {this.state.date.toLocaleTimeString()}.</h2>
                 <SearchBox searchChange={this.onSearchChange} />
                 <Scroll>
                     <CardList robots={filteredRobots} />
